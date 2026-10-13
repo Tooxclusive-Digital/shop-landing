@@ -13,21 +13,3 @@ export function Glow({ at = "top" }: { at?: "top" | "bottom" }) {
     />
   );
 }
-
-/** A faint grid that fades out from the top centre. */
-export function GridTexture() {
-  const mask = "radial-gradient(70% 55% at 50% 0%, #000 30%, transparent 75%)";
-  return (
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-0 opacity-[0.06]"
-      style={{
-        backgroundImage:
-          "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
-        backgroundSize: "72px 72px",
-        maskImage: mask,
-        WebkitMaskImage: mask,
-      }}
-    />
-  );
-}

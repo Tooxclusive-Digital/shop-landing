@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { contentFetch } from "@/shared/api/content-client";
 import type { PublishedPost } from "@/shared/api/platform-post.type";
 import { ClosingCta } from "@/shared/ui/site/closing-cta";
-import { Glow, GridTexture } from "@/shared/ui/site/glow";
+import { Glow } from "@/shared/ui/site/glow";
 import { label, wrap } from "@/shared/ui/site/styles";
 import { formatPostDate, PostCard } from "@/features/learn/ui/post-card";
 
@@ -88,7 +88,6 @@ export async function BlogPostPage({ slug }: { slug: string }) {
 
       <header className="relative overflow-hidden bg-navy text-white">
         <Glow />
-        <GridTexture />
         {post.coverImageUrl && (
           <div aria-hidden className="absolute inset-x-0 bottom-0 h-32 bg-white md:h-56" />
         )}
