@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Search } from "lucide-react";
 import { SIGNUP_URL, TRIAL_NOTE } from "@/shared/config/site";
 import { ButtonLink } from "@/shared/ui/site/button-link";
-import { Glow, GridTexture } from "@/shared/ui/site/glow";
+import { Glow } from "@/shared/ui/site/glow";
 import { label, wrap } from "@/shared/ui/site/styles";
 import { MetricStrip, OrdersPanel, PhoneShot } from "@/shared/ui/product/product-ui";
 import { SAMPLE_STORE } from "@/shared/ui/product/sample-data";
@@ -12,7 +12,6 @@ export function HomeHero() {
   return (
     <section className="relative overflow-hidden bg-navy text-white">
       <Glow />
-      <GridTexture />
       {/* The hero turns white below the fold line, so the product window
           straddles the edge into the page. */}
       <div aria-hidden className="absolute inset-x-0 bottom-0 h-[18%] bg-white md:h-[30%]" />

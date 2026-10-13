@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Glow, GridTexture } from "./glow";
+import { Glow } from "./glow";
 import { label, wrap } from "./styles";
 
 /**
@@ -42,7 +42,6 @@ export function PageHero({
   return (
     <section className={cn("relative overflow-hidden bg-navy text-white", className)}>
       <Glow />
-      <GridTexture />
       {overlap && (
         <div aria-hidden className={cn("absolute inset-x-0 bottom-0 bg-white", band[overlap])} />
       )}
