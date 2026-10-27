@@ -8,8 +8,10 @@
  * plan-features.map.ts (what's actually gated). Prices: the
  * subscription_plans table, copied by hand because the plans endpoint
  * needs a login. Keep them in step with the admin's billing page; last
- * copied 2026-10-08. Free and Enterprise aren't self-serve (the admin's
- * plan picker hides both), so Enterprise shows as custom.
+ * copied 2026-10-27, when every plan moved to one ladder: 3 months about
+ * 7% off, 6 months 10% off, a year for the price of 10 months. Free and
+ * Enterprise aren't self-serve (the admin's plan picker hides both), so
+ * Enterprise shows as custom.
  */
 
 export type BillingCycle = "monthly" | "quarterly" | "semiannual" | "annual";
@@ -41,20 +43,20 @@ export interface Tier {
 export const tiers: Tier[] = [
   {
     name: "Starter",
-    prices: { monthly: 7140, quarterly: 25000, semiannual: 48000, annual: 86000 },
+    prices: { monthly: 7140, quarterly: 20000, semiannual: 38500, annual: 71400 },
     blurb: "Everything you need to start selling.",
     features: ["1 store", "5 team members", "200 credits a month", "30 days of analytics history", "Online store, quotes and invoicing", "Email support"],
   },
   {
     name: "Growth",
-    prices: { monthly: 19000, quarterly: 57500, semiannual: 115000, annual: 191500 },
+    prices: { monthly: 19000, quarterly: 53000, semiannual: 102500, annual: 190000 },
     blurb: "More room for a second store and a bigger team.",
     features: ["2 stores", "10 team members", "800 credits a month", "90 days of analytics history", "Everything in Starter"],
     highlight: true,
   },
   {
     name: "Pro",
-    prices: { monthly: 38500, quarterly: 115000, semiannual: 191500, annual: 345000 },
+    prices: { monthly: 38500, quarterly: 108000, semiannual: 208000, annual: 385000 },
     blurb: "For established brands running several stores.",
     features: ["5 stores", "25 team members", "2,000 credits a month", "A year of analytics history", "Everything in Growth", "Priority support"],
   },
@@ -167,7 +169,7 @@ export const pricingFaqs = [
   },
   {
     q: "Can I pay quarterly or yearly?",
-    a: "Yes. Pay monthly, every 3 months, every 6 months or yearly, and switch from your billing settings. On Growth and Pro, paying yearly works out cheapest per month.",
+    a: "Yes. Pay monthly, every 3 months, every 6 months or yearly, and switch from your billing settings. Every plan costs less per month the longer you pay for: about 7% off for 3 months, 10% off for 6 months, and 2 months free when you pay yearly.",
   },
   {
     q: "What happens to my store if I downgrade?",
